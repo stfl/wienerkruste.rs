@@ -1,6 +1,6 @@
 # wienerkruste.rs - Zola Configuration
 
-base_url = "https://wienerkruste.rs"
+base_url = "https://stfl.github.io/wienerkruste.rs"
 title = "wienerkruste.rs"
 description = "Vienna's Rust talent collective. Connecting Austria's top Rust developers with global opportunities."
 
