@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <main class="landing">
   <!-- Hero Section -->
   <section class="hero">
@@ -8,7 +6,7 @@
       <div class="hero__brand">
         <div class="logo">
           <img
-            src="/schnitzel_ferris_no_bg.png"
+            src="{{ config.base_url }}/schnitzel_ferris_no_bg.png"
             alt="Wiener Kruste Logo"
             class="logo__icon"
           />
@@ -97,6 +95,5 @@
       </div>
     </div>
   </section>
-
 </main>
 {% endblock %}
