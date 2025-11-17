@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="landing">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__brand">
+        <div class="logo">
+          <img
+            src="/schnitzel_ferris_no_bg.png"
+            alt="Wiener Kruste Logo"
+            class="logo__icon"
+          />
+        </div>
+        <h1 class="hero__wordmark">wienerkruste.rs</h1>
+      </div>
+
+      <h2 class="hero__tagline">
+        {{ section.extra.hero_tagline | default(value=config.extra.tagline) }}
+      </h2>
+
+      <div class="hero__subtitle">{{ section.extra.hero_subtitle | safe }}</div>
+
+      <div class="hero__cta">
+        <a
+          href="{{ config.extra.typeform_url }}"
+          class="btn btn--primary"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ config.extra.founding_cta }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="value-prop">
+    <div class="container">
+      <h3 class="section__title">{{ section.extra.value_prop_title }}</h3>
+
+      <div class="features">
+        {% for feature in section.extra.features %}
+        <div class="feature">
+          <div class="feature__icon">{{ feature.icon }}</div>
+          <h4 class="feature__title">{{ feature.title }}</h4>
+          <p class="feature__text">{{ feature.text }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- For Developers -->
+  <section class="audience audience--developers">
+    <div class="container">
+      <div class="audience__content">
+        <h3 class="audience__title">{{ section.extra.developers_title }}</h3>
+        <div class="audience__text">
+          {{ section.extra.developers_intro | safe }}
+        </div>
+        <ul class="audience__benefits">
+          {% for benefit in section.extra.developers_benefits %}
+          <li>{{ benefit }}</li>
+          {% endfor %}
+        </ul>
+        <a
+          href="{{ config.extra.typeform_url }}"
+          class="btn btn--secondary"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.extra.developers_cta }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Companies -->
+  <section class="audience audience--companies">
+    <div class="container">
+      <div class="audience__content">
+        <h3 class="audience__title">{{ section.extra.companies_title }}</h3>
+        <div class="audience__text">
+          {{ section.extra.companies_intro | safe }}
+        </div>
+        <ul class="audience__benefits">
+          {% for benefit in section.extra.companies_benefits %}
+          <li>{{ benefit }}</li>
+          {% endfor %}
+        </ul>
+        <p class="audience__cta-text">{{ section.extra.companies_cta_text }}</p>
+        <a href="mailto:{{ config.extra.email }}" class="btn btn--secondary">
+          {{ section.extra.companies_cta }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}{{ page.title }} – {{ config.title
+}}{% endblock %} {% block description %}{{ page.description |
+default(value=config.description) }}{% endblock %} {% block content %}
+<main class="legal-page">
+  <article class="legal-content">
+    <div class="container container--narrow">
+      <header class="legal-header">
+        <h1 class="legal-title">{{ page.title }}</h1>
+        {% if page.date %}
+        <p class="legal-date">
+          Last updated: {{ page.date | date(format="%B %d, %Y") }}
+        </p>
+        {% endif %}
+      </header>
+
+      <div class="legal-body prose">{{ page.content | safe }}</div>
+
+      <footer class="legal-footer">
+        <a href="{{ get_url(path='@/_index.md') }}" class="btn btn--secondary"
+          >← Back to Home</a
+        >
+      </footer>
+    </div>
+  </article>
+</main>
+{% endblock %}

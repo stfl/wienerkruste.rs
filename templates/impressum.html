@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} – {{ config.title }}{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<main class="legal-page">
+    <article class="legal-content">
+        <div class="container container--narrow">
+            <header class="legal-header">
+                <h1 class="legal-title">{{ page.title }}</h1>
+                {% if page.date %}
+                <p class="legal-date">Last updated: {{ page.date | date(format="%B %d, %Y") }}</p>
+                {% endif %}
+            </header>
+
+            <div class="legal-body prose">
+                <h2>Information according to § 5 TMG / § 25 MedienG</h2>
+
+                <p>
+                    <strong>Name:</strong> {{ page.extra.company_name }}<br>
+                    <strong>Address:</strong> {{ page.extra.street_address }}<br>
+                    <strong>Location:</strong> {{ page.extra.postal_code }} {{ page.extra.city }}<br>
+                    <strong>Country:</strong> {{ page.extra.country }}
+                </p>
+
+                <h2>Contact</h2>
+
+                <p><strong>Email:</strong> {{ page.extra.email }}</p>
+
+                {% if page.extra.vat_id %}
+                <p><strong>VAT ID:</strong> {{ page.extra.vat_id }}</p>
+                {% endif %}
+
+                <h2>Responsible for Content</h2>
+
+                <p>According to § 55 Abs. 2 RStV:</p>
+
+                <p>
+                    {{ page.extra.company_name }}<br>
+                    {{ page.extra.street_address }}<br>
+                    {{ page.extra.postal_code }} {{ page.extra.city }}
+                </p>
+
+                <h2>Liability for Content</h2>
+
+                <p>As a service provider, we are responsible for our own content on these pages in accordance with general legislation. However, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p>
+
+                <p>Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the time of knowledge of a specific infringement. Upon becoming aware of such violations, we will remove this content immediately.</p>
+
+                <h2>Liability for Links</h2>
+
+                <p>Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot accept any liability for this external content. The respective provider or operator of the pages is always responsible for the content of the linked pages.</p>
+
+                <p>The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of an infringement. Upon becoming aware of legal violations, we will remove such links immediately.</p>
+
+                <h2>Copyright</h2>
+
+                <p>The content and works created by the site operators on these pages are subject to Austrian/German copyright law. Duplication, processing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.</p>
+
+                <h2>EU Dispute Resolution</h2>
+
+                <p>The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a></p>
+
+                <p>You can find our email address in the imprint above.</p>
+
+                <h2>Consumer Dispute Resolution / Universal Arbitration Board</h2>
+
+                <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+            </div>
+
+            <footer class="legal-footer">
+                <a href="{{ get_url(path='@/_index.md') }}" class="btn btn--secondary">← Back to Home</a>
+            </footer>
+        </div>
+    </article>
+</main>
+{% endblock %}

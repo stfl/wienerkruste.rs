@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}{{ config.title }} – {{ config.extra.tagline }}{%
+      endblock %}
+    </title>
+    <meta
+      name="description"
+      content="{% block description %}{{ config.description }}{% endblock %}"
+    />
+
+    <!-- Favicon - you'll want to add a schnitzel-ferris icon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="{{ config.title }}" />
+    <meta property="og:description" content="{{ config.description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ config.base_url }}" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <nav class="legal-nav">
+      <div class="container">
+        <a href="{{ get_url(path='@/_index.md') }}" class="legal-nav__logo"
+          >wienerkruste.rs</a
+        >
+      </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <p class="footer__tagline">Built with Rust. Served with pride.</p>
+          <p class="footer__contact">
+            <a href="mailto:{{ config.extra.email }}"
+              >{{ config.extra.email }}</a
+            >
+            <span class="footer__divider">•</span>
+            <a
+              href="{{ config.extra.meetup_url }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {{ config.extra.meetup_name }} Meetup
+            </a>
+          </p>
+          <p class="footer__legal">
+            <a href="{{ get_url(path='@/impressum.md') }}">Impressum</a>
+            <span class="footer__divider">•</span>
+            <a href="{{ get_url(path='@/datenschutz.md') }}">Datenschutz</a>
+          </p>
+          <p class="footer__meta">
+            Vienna, Austria • {{ now() | date(format="%Y") }}
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

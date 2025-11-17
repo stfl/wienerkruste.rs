@@ -1,0 +1,595 @@
+// wienerkruste.rs - Main Styles
+// "Freshly baked" color palette: crust tones + schnitzel warmth
+
+// ============================================================================
+// VARIABLES
+// ============================================================================
+
+// Color Palette - Crust & Schnitzel
+$color-crust-dark: #8b4513; // Deep brown crust
+$color-crust: #cd853f; // Golden crust
+$color-crust-light: #deb887; // Light crispy brown
+$color-schnitzel: #f4e4c1; // Warm schnitzel yellow
+$color-flour: #faf6f0; // Flour white
+$color-lemon: #ffe66d; // Lemon accent
+
+// Functional Colors
+$color-bg: $color-flour;
+$color-text: #2c1810; // Dark chocolate brown
+$color-text-muted: #6b4423;
+$color-accent: $color-crust;
+$color-accent-dark: $color-crust-dark;
+
+// Typography
+$font-primary:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+$font-mono:
+    "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+
+// Spacing
+$spacing-unit: 1rem;
+$spacing-xs: calc($spacing-unit * 0.5);
+$spacing-sm: calc($spacing-unit * 0.75);
+$spacing-md: calc($spacing-unit * 1.5);
+$spacing-lg: calc($spacing-unit * 2);
+$spacing-xl: calc($spacing-unit * 3);
+$spacing-2xl: calc($spacing-unit * 4);
+$spacing-3xl: calc($spacing-unit * 6);
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-wide: 1280px;
+
+// Container
+$container-max: 1200px;
+$container-padding: $spacing-md;
+
+// ============================================================================
+// RESET & BASE
+// ============================================================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: $color-text;
+    background-color: $color-bg;
+}
+
+// ============================================================================
+// TYPOGRAPHY
+// ============================================================================
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: $color-text;
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.25rem;
+}
+h3 {
+    font-size: 1.75rem;
+}
+h4 {
+    font-size: 1.25rem;
+}
+
+@media (max-width: $bp-tablet) {
+    h1 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.125rem;
+    }
+}
+
+a {
+    color: $color-accent-dark;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+// ============================================================================
+// LAYOUT
+// ============================================================================
+
+.container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
+
+section {
+    padding: $spacing-3xl 0;
+
+    @media (max-width: $bp-tablet) {
+        padding: $spacing-2xl 0;
+    }
+}
+
+// ============================================================================
+// COMPONENTS
+// ============================================================================
+
+// Buttons
+.btn {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &--primary {
+        background-color: $color-crust-dark;
+        color: $color-flour;
+
+        &:hover {
+            background-color: $color-accent-dark;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba($color-crust-dark, 0.3);
+        }
+    }
+
+    &--secondary {
+        background-color: transparent;
+        color: $color-crust-dark;
+        border-color: $color-crust-dark;
+
+        &:hover {
+            background-color: $color-crust-dark;
+            color: $color-flour;
+        }
+    }
+}
+
+// ============================================================================
+// SECTIONS
+// ============================================================================
+
+// Hero Section
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, $color-flour 0%, $color-schnitzel 100%);
+    border-bottom: 4px solid $color-crust;
+
+    .container {
+        max-width: 900px;
+    }
+
+    &__brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: $spacing-lg;
+    }
+
+    &__wordmark {
+        font-family: $font-mono;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $color-crust-dark;
+        margin-top: $spacing-sm;
+
+        @media (max-width: $bp-tablet) {
+            font-size: 1.75rem;
+        }
+    }
+
+    &__tagline {
+        font-size: 2.75rem;
+        font-weight: 700;
+        color: $color-text;
+        margin-bottom: $spacing-md;
+
+        @media (max-width: $bp-tablet) {
+            font-size: 2rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.25rem;
+        color: $color-text-muted;
+        margin-bottom: $spacing-xl;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (max-width: $bp-tablet) {
+            font-size: 1.125rem;
+        }
+    }
+
+    &__cta {
+        margin-top: $spacing-xl;
+    }
+}
+
+.logo {
+    &__icon {
+        display: block;
+
+        // Image styling
+        max-width: 400px;
+        height: auto;
+
+        @media (max-width: $bp-tablet) {
+            max-width: 300px;
+        }
+
+        @media (max-width: $bp-mobile) {
+            max-width: 250px;
+        }
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+// Value Prop Section
+.value-prop {
+    background-color: white;
+
+    .section__title {
+        text-align: center;
+        margin-bottom: $spacing-xl;
+        font-size: 2.25rem;
+    }
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-xl;
+    margin-top: $spacing-xl;
+}
+
+.feature {
+    text-align: center;
+
+    &__icon {
+        font-size: 3rem;
+        margin-bottom: $spacing-md;
+    }
+
+    &__title {
+        margin-bottom: $spacing-sm;
+        color: $color-crust-dark;
+    }
+
+    &__text {
+        color: $color-text-muted;
+        line-height: 1.6;
+    }
+}
+
+// Audience Sections
+.audience {
+    &--developers {
+        background: linear-gradient(to bottom, white 0%, $color-flour 100%);
+    }
+
+    &--companies {
+        background-color: $color-schnitzel;
+    }
+
+    &__content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: $spacing-md;
+    }
+
+    &__text {
+        font-size: 1.25rem;
+        margin-bottom: $spacing-lg;
+        color: $color-text-muted;
+    }
+
+    &__benefits {
+        list-style: none;
+        margin-bottom: $spacing-xl;
+
+        li {
+            padding-left: $spacing-lg;
+            margin-bottom: $spacing-sm;
+            position: relative;
+
+            &::before {
+                content: "→";
+                position: absolute;
+                left: 0;
+                color: $color-crust-dark;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__cta-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: $spacing-md;
+        color: $color-text;
+    }
+}
+
+// Footer
+.footer {
+    background-color: $color-crust-dark;
+    color: $color-flour;
+    padding: $spacing-xl 0;
+    text-align: center;
+
+    &__content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    &__tagline {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: $spacing-md;
+    }
+
+    &__contact {
+        margin-bottom: $spacing-sm;
+
+        a {
+            color: $color-lemon;
+
+            &:hover {
+                color: $color-schnitzel;
+            }
+        }
+    }
+
+    &__legal {
+        margin-bottom: $spacing-sm;
+        font-size: 0.875rem;
+
+        a {
+            color: $color-flour;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+                color: $color-lemon;
+            }
+        }
+    }
+
+    &__divider {
+        margin: 0 $spacing-sm;
+        opacity: 0.5;
+    }
+
+    &__meta {
+        font-size: 0.875rem;
+        opacity: 0.7;
+        margin-top: $spacing-md;
+    }
+}
+
+// ============================================================================
+// LEGAL NAVIGATION
+// ============================================================================
+
+.legal-nav {
+    background-color: white;
+    border-bottom: 1px solid rgba($color-crust, 0.2);
+    padding: $spacing-md 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-family: $font-mono;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: $color-crust-dark;
+
+        &:hover {
+            color: $color-crust;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: $spacing-md;
+        font-size: 0.875rem;
+
+        a {
+            color: $color-text-muted;
+
+            &:hover {
+                color: $color-crust-dark;
+            }
+        }
+    }
+
+    @media (max-width: $bp-mobile) {
+        &__links {
+            gap: $spacing-sm;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+// ============================================================================
+// LEGAL PAGES
+// ============================================================================
+
+.legal-page {
+    background-color: white;
+    min-height: 100vh;
+}
+
+.legal-content {
+    padding: $spacing-3xl 0;
+
+    @media (max-width: $bp-tablet) {
+        padding: $spacing-2xl 0;
+    }
+}
+
+.container--narrow {
+    max-width: 800px;
+}
+
+.legal-header {
+    margin-bottom: $spacing-2xl;
+    padding-bottom: $spacing-lg;
+    border-bottom: 2px solid $color-crust;
+}
+
+.legal-title {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-sm;
+
+    @media (max-width: $bp-tablet) {
+        font-size: 2rem;
+    }
+}
+
+.legal-date {
+    color: $color-text-muted;
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.legal-body {
+    margin-bottom: $spacing-2xl;
+}
+
+.legal-footer {
+    padding-top: $spacing-xl;
+    border-top: 1px solid rgba($color-crust, 0.2);
+}
+
+// Prose styling for markdown content
+.prose {
+    h2 {
+        margin-top: $spacing-xl;
+        margin-bottom: $spacing-md;
+        color: $color-crust-dark;
+        font-size: 1.75rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h3 {
+        margin-top: $spacing-lg;
+        margin-bottom: $spacing-sm;
+        color: $color-crust-dark;
+        font-size: 1.375rem;
+    }
+
+    p {
+        margin-bottom: $spacing-md;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ul,
+    ol {
+        margin-bottom: $spacing-md;
+        padding-left: $spacing-xl;
+
+        li {
+            margin-bottom: $spacing-xs;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    strong {
+        font-weight: 700;
+        color: $color-text;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    code {
+        background-color: rgba($color-crust, 0.1);
+        padding: 0.125rem 0.375rem;
+        border-radius: 3px;
+        font-family: $font-mono;
+        font-size: 0.875em;
+    }
+
+    blockquote {
+        border-left: 4px solid $color-crust;
+        padding-left: $spacing-md;
+        margin: $spacing-lg 0;
+        color: $color-text-muted;
+        font-style: italic;
+    }
+}
