@@ -13,12 +13,6 @@ Austria's top Rust talent with global opportunities.</p>
 # Value Proposition
 value_prop_title = "No algorithms. Just community."
 
-features = [
-    { icon = "🤝", title = "Vetted Through Meetups", text = "Every developer in our network is personally known through Rust Vienna. We've shared code reviews, lightning talks, and late-night debugging sessions." },
-    { icon = "🎯", title = "High-Trust Matching", text = "No spray-and-pray recruitment. We curate opportunities that align with each developer's strengths, interests, and career goals." },
-    { icon = "🌍", title = "Local Talent, Global Reach", text = "Vienna's Rust community meets world-class opportunities. Whether you're hiring remotely or need on-site excellence, we connect the dots." }
-]
-
 # For Developers Section
 developers_title = "For Rust Developers"
 developers_intro = """
@@ -52,4 +46,20 @@ companies_cta = "Get in Touch"
 
 # Footer
 footer_tagline = "Built with Rust. Served with pride."
+
+# Features offered
+[[ extra.features ]]
+icon = "🤝"
+title = "Vetted Through Meetups"
+text = "Every developer in our network is personally known through Rust Vienna. We've shared code reviews, lightning talks, and late-night debugging sessions."
+
+[[ extra.features ]]
+icon = "🎯"
+title = "High-Trust Matching"
+text = "No spray-and-pray recruitment. We curate opportunities that align with each developer's strengths, interests, and career goals."
+
+[[ extra.features ]]
+icon = "🌍"
+title = "Local Talent, Global Reach"
+text = "Vienna's Rust community meets world-class opportunities. Whether you're hiring remotely or need on-site excellence, we connect the dots."
 +++
