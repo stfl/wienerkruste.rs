@@ -1,0 +1,27 @@
+# Zola build output
+public/
+
+# Sass cache
+.sass-cache/
+
+# Direnv
+.direnv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+.~*
