@@ -54,13 +54,13 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Wiener Kruste - Vienna's Rust Collective"
+      content="{{ config.extra.seo.og_image_alt }}"
     />
     <meta property="og:site_name" content="{{ config.title }}" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="{{ config.extra.seo.twitter_card }}" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
       content="{% block twitter_title %}{{ config.title }} – {{ config.extra.tagline }}{% endblock %}"
@@ -75,7 +75,7 @@
     />
     <meta
       name="twitter:image:alt"
-      content="{{ config.extra.seo.twitter_card }}"
+      content="{{ config.extra.seo.og_image_alt }}"
     />
 
     <!-- JSON-LD Structured Data -->
