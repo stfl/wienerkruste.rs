@@ -7,21 +7,15 @@
       {% block title %}{{ config.title }} – {{ config.extra.tagline }}{%
       endblock %}
     </title>
-    <meta
-      name="description"
-      content="{% block description %}{{ config.description }}{% endblock %}"
-    />
+    <meta name="description" content="{{ config.description }}" />
     <meta
       name="keywords"
-      content="{% block keywords %}Rust, Vienna, Austria, Rust developers, Rust jobs, Rust talent, Rust Vienna, Rustaceans, Rust community{% endblock %}"
+      content="Rust, Vienna, Austria, Rust developers, Rust jobs, Rust talent, Rust Vienna, Rustaceans, Rust community"
     />
     <meta name="author" content="{{ config.extra.company_name }}" />
 
     <!-- Canonical URL -->
-    <link
-      rel="canonical"
-      href="{% block canonical %}{{ config.base_url }}{% endblock %}"
-    />
+    <link rel="canonical" href="{{ config.base_url }}" />
 
     <!-- Favicon - you'll want to add a schnitzel-ferris icon -->
     <link rel="icon" type="image/png" href="{{ config.extra.logo }}" />
@@ -33,29 +27,17 @@
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
 
     <!-- Open Graph for social sharing -->
-    <meta
-      property="og:title"
-      content="{% block og_title %}{{ config.title }} – {{ config.extra.tagline }}{% endblock %}"
-    />
-    <meta
-      property="og:description"
-      content="{% block og_description %}{{ config.description }}{% endblock %}"
-    />
+    <meta property="og:title" content="{{ config.extra.seo.og_title }}" />
+    <meta property="og:description" content="{{ config.description }}" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="{% block og_url %}{{ config.base_url }}{% endblock %}"
-    />
+    <meta property="og:url" content="{{ config.base_url }}" />
     <meta
       property="og:image"
-      content="{% block og_image %}{{ config.base_url }}{{ config.extra.seo.og_image }}{% endblock %}"
+      content="{{ config.base_url }}{{ config.extra.seo.og_image }}"
     />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
-    <meta
-      property="og:image:alt"
-      content="{{ config.extra.seo.og_image_alt }}"
-    />
+    <meta property="og:image:alt" content="{{ config.extra.seo.og_title }}" />
     <meta property="og:site_name" content="{{ config.title }}" />
     <meta property="og:locale" content="en_US" />
 
@@ -63,20 +45,14 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="{% block twitter_title %}{{ config.title }} – {{ config.extra.tagline }}{% endblock %}"
+      content="{{ config.title }} – {{ config.extra.tagline }}"
     />
-    <meta
-      name="twitter:description"
-      content="{% block twitter_description %}{{ config.description }}{% endblock %}"
-    />
+    <meta name="twitter:description" content="{{ config.description }}" />
     <meta
       name="twitter:image"
-      content="{% block twitter_image %}{{ config.base_url }}{{ config.extra.seo.og_image }}{% endblock %}"
+      content="{{ config.base_url }}{{ config.extra.seo.og_image }}"
     />
-    <meta
-      name="twitter:image:alt"
-      content="{{ config.extra.seo.og_image_alt }}"
-    />
+    <meta name="twitter:image:alt" content="{{ config.extra.seo.og_title }}" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
