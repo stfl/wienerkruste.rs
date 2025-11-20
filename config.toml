@@ -9,6 +9,9 @@ minify_html = true
 generate_feeds = false
 build_search_index = false
 
+# Taxonomies for better organization
+taxonomies = []
+
 [markdown]
 highlight_code = false
 
@@ -31,3 +34,9 @@ vat_id = "ATU81467636"  # Your VAT ID if applicable
 # Copy variants - easy to A/B test
 tagline = "Vienna's Rust talent. Freshly served."
 founding_cta = "Become a Founding Member"
+
+# SEO settings
+[extra.seo]
+og_image = "/schnitzel_ferris.png"
+twitter_card = "Vienna's Rust talent collective. Connecting Austria's top Rust developers with global opportunities."
+keywords = "Rust, Vienna, Austria, Rust developers, Rust jobs, Rust talent, Rust community, Rustaceans"

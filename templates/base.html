@@ -11,18 +11,103 @@
       name="description"
       content="{% block description %}{{ config.description }}{% endblock %}"
     />
+    <meta
+      name="keywords"
+      content="{% block keywords %}Rust, Vienna, Austria, Rust developers, Rust jobs, Rust talent, Rust Vienna, Rustaceans, Rust community{% endblock %}"
+    />
+    <meta name="author" content="{{ config.extra.company_name }}" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="{% block canonical %}{{ config.base_url }}{% endblock %}"
+    />
 
     <!-- Favicon - you'll want to add a schnitzel-ferris icon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/schnitzel_ferris_no_bg.png" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#CE422B" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
 
     <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="{{ config.title }}" />
-    <meta property="og:description" content="{{ config.description }}" />
+    <meta
+      property="og:title"
+      content="{% block og_title %}{{ config.title }} – {{ config.extra.tagline }}{% endblock %}"
+    />
+    <meta
+      property="og:description"
+      content="{% block og_description %}{{ config.description }}{% endblock %}"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ config.base_url }}" />
+    <meta
+      property="og:url"
+      content="{% block og_url %}{{ config.base_url }}{% endblock %}"
+    />
+    <meta
+      property="og:image"
+      content="{% block og_image %}{{ config.base_url }}{{ config.extra.seo.og_image }}{% endblock %}"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Wiener Kruste - Vienna's Rust Collective"
+    />
+    <meta property="og:site_name" content="{{ config.title }}" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="{{ config.extra.seo.twitter_card }}" />
+    <meta
+      name="twitter:title"
+      content="{% block twitter_title %}{{ config.title }} – {{ config.extra.tagline }}{% endblock %}"
+    />
+    <meta
+      name="twitter:description"
+      content="{% block twitter_description %}{{ config.description }}{% endblock %}"
+    />
+    <meta
+      name="twitter:image"
+      content="{% block twitter_image %}{{ config.base_url }}{{ config.extra.seo.og_image }}{% endblock %}"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Wiener Kruste - Vienna's Rust Collective"
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{ config.title }}",
+        "url": "{{ config.base_url }}",
+        "logo": "{{ config.base_url }}{{ config.extra.seo.og_image }}",
+        "description": "{{ config.description }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ config.extra.street_address }}",
+          "addressLocality": "{{ config.extra.city }}",
+          "postalCode": "{{ config.extra.postal_code }}",
+          "addressCountry": "{{ config.extra.country }}"
+        },
+        "email": "{{ config.extra.email }}",
+        "sameAs": ["{{ config.extra.meetup_url }}"],
+        "areaServed": {
+          "@type": "Place",
+          "name": "Austria"
+        },
+        "knowsAbout": [
+          "Rust Programming",
+          "Software Development",
+          "Talent Recruitment"
+        ]
+      }
+    </script>
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
