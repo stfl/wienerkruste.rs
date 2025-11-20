@@ -38,6 +38,6 @@ founding_cta = "Become a Founding Member"
 
 # SEO settings
 [extra.seo]
-og_image = "/schnitzel_ferris_small.png"
+og_image = "/schnitzel_ferris_og.jpg"
 og_title = "Wiener Kruste - Vienna's Rust Collective"
 keywords = "Rust, Vienna, Austria, Rust developers, Rust jobs, Rust talent, Rust community, Rustaceans"
