@@ -117,17 +117,6 @@ These variables automatically populate both legal pages.
    
    Now the environment loads automatically when you `cd` into the project!
 
-4. **Update configuration**
-   Edit `config.toml`:
-   - Set your actual `base_url`
-   - Update `typeform_url` with your form link
-   - Update `meetup_url` with the Rust Vienna meetup link
-   - **Fill in all legal entity info under `[extra]`**
-
-5. **Update legal pages**
-   - Review `content/impressum.md`
-   - Review `content/datenschutz.md`
-   - Adjust any specific clauses for your situation
 
 6. **Run development server**
    ```bash

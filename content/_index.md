@@ -4,7 +4,7 @@ template = "index.html"
 
 [extra]
 # Hero Section
-hero_tagline = "Vienna's Rust talent. Freshly served."
+hero_tagline = "Vienna's Rust talent.<br /> Freshly served."
 hero_subtitle = """
 <p>Building the Wiener Kruste Collective — an exclusive network connecting 
 Austria's top Rust talent with global opportunities.</p>
@@ -16,9 +16,8 @@ value_prop_title = "No algorithms. Just community."
 # For Developers Section
 developers_title = "For Rust Developers"
 developers_intro = """
-<p>Join a founding cohort of Vienna's Rust practitioners. Get early 
-access to curated opportunities with companies who understand and 
-value Rust's strengths.</p>
+Join the founding cohort of Vienna's Rustaceans. Get early access to curated
+opportunities with companies who understand and value Rust's strengths.
 """
 developers_benefits = [
     "Founding member status and influence on network direction",
@@ -31,9 +30,9 @@ developers_cta = "Join the Collective"
 # For Companies Section
 companies_title = "For Companies"
 companies_intro = """
-<p>Skip the LinkedIn lottery. We're building a curated pool of 
-Rust developers who are not just technically strong, but also 
-community-engaged and personally vetted.</p>
+Skip the LinkedIn lottery. We're building a curated pool of Rust developers
+who are not just technically strong, but also community-engaged and personally
+vetted.
 """
 companies_benefits = [
     "Access to pre-vetted Rust talent from Austria's strongest community",
@@ -51,7 +50,7 @@ footer_tagline = "Built with Rust. Served with pride."
 [[ extra.features ]]
 icon = "🤝"
 title = "Vetted Through Meetups"
-text = "Every developer in our network is personally known through Rust Vienna. We've shared code reviews, lightning talks, and late-night debugging sessions."
+text = "Every developer in our network is personally known. We've shared code reviews, lightning talks, and late-night debugging sessions."
 
 [[ extra.features ]]
 icon = "🎯"

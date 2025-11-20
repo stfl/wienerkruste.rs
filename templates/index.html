@@ -14,15 +14,13 @@
         <h1 class="hero__wordmark">wienerkruste.rs</h1>
       </div>
 
-      <h2 class="hero__tagline">
-        {{ section.extra.hero_tagline | default(value=config.extra.tagline) }}
-      </h2>
+      <h2 class="hero__tagline">{{ section.extra.hero_tagline | safe }}</h2>
 
       <div class="hero__subtitle">{{ section.extra.hero_subtitle | safe }}</div>
 
       <div class="hero__cta">
         <a
-          href="{{ config.extra.typeform_url }}"
+          href="mailto:{{ config.extra.email }}"
           class="btn btn--primary"
           target="_blank"
           rel="noopener"
@@ -64,7 +62,7 @@
           {% endfor %}
         </ul>
         <a
-          href="{{ config.extra.typeform_url }}"
+          href="mailto:{{ config.extra.email }}"
           class="btn btn--secondary"
           target="_blank"
           rel="noopener"

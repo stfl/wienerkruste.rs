@@ -15,7 +15,6 @@ highlight_code = false
 [extra]
 # Contact & Social
 email = "contact@wienerkruste.rs"
-typeform_url = "https://your-typeform-url-here.com"  # Replace with actual form URL
 
 # Meetup info
 meetup_name = "Rust Vienna"
