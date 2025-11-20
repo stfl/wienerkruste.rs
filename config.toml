@@ -18,6 +18,7 @@ highlight_code = false
 [extra]
 # Contact & Social
 email = "contact@wienerkruste.rs"
+logo = "/schnitzel_ferris_no_bg.png"
 
 # Meetup info
 meetup_name = "Rust Vienna"
@@ -38,5 +39,5 @@ founding_cta = "Become a Founding Member"
 # SEO settings
 [extra.seo]
 og_image = "/schnitzel_ferris.png"
-twitter_card = "Vienna's Rust talent collective. Connecting Austria's top Rust developers with global opportunities."
+twitter_card = "Wiener Kruste - Vienna's Rust Collective"
 keywords = "Rust, Vienna, Austria, Rust developers, Rust jobs, Rust talent, Rust community, Rustaceans"
